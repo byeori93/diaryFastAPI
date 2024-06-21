@@ -1,11 +1,10 @@
-from sqlmodel import create_engine, SQLModel, Session
+from sqlmodel import create_engine, SQLModel, Session, select
+from model.postModel import Post
 
-#이게 뭐지?
-conn_args = {"check_thred": False}
 #db 연결정보
-DATABASE_URI: str ='mysql+pymysql://{byeori}:{sh100422}@localhost:{3306}/diary'
+DATABASE_URI: str = "mysql+pymysql://byeori:sh100422@localhost:3306/diary"
 #db엔진(이라고 하네) 생성
-engine = create_engine(url=DATABASE_URI, echo=True, connect_args=conn_args)
+engine = create_engine(DATABASE_URI, echo=True)
 
 
 #테이블 생성할 때
@@ -16,4 +15,4 @@ def create_db_and_tables():
 #yield가 뭐야...?
 def session():
 	with Session(engine) as session:
-		yield session
+		return session

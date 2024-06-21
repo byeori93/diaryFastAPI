@@ -1,0 +1,21 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	//args는 가상환경 위치로 해주고 실제 실행은 가상환경 끄고 해야됨
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Python Debugger: FastAPI",
+			"type": "debugpy",
+			"request": "launch",
+			"module": "uvicorn",
+			"args": [
+				"env.API.main:app"
+			],
+			"jinja": true,
+			"console": "integratedTerminal",
+			"justMyCode": false
+		}
+	]
+}
