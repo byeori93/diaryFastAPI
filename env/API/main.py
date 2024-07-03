@@ -36,7 +36,7 @@ async def ocrValue(file: UploadFile = File(...)):
 		print('text :: ', text)
 		print('value :: ', value)
 
-		#정상값 return
+		#정상값 return 다시커밋
 		return JSONResponse(status_code=200, content=value)
 	
 	#에러
